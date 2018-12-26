@@ -1,5 +1,6 @@
 package com.digital.alarm;
 
+import com.digital.alarm.presenter.AlarmClockPresenter;
 import com.digital.alarm.view.ClockFrame;
 import com.digital.alarm.view.ClockView;
 
@@ -10,12 +11,7 @@ public class AlarmClock {
 
     public static void main(String[] args) {
 
-        ClockView view = ClockFrame.create();
-
-        SwingUtilities.invokeLater(() -> {
-            view.asFrame().pack();
-            view.asFrame().setVisible(true);
-            view.asFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        });
+        AlarmClockPresenter presenter = AlarmClockPresenter.create();
+        presenter.run();
     }
 }
