@@ -1,5 +1,7 @@
 package com.digital.alarm.view;
 
+import com.digital.alarm.model.Digit;
+
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import java.awt.FlowLayout;
@@ -7,19 +9,19 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-class DigitView extends JPanel {
+class DigitPanel extends JPanel {
 
     private static final int WIDTH = 180;
 
     private BufferedImage img;
 
-    private DigitView() {
+    private DigitPanel() {
         setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         setPreferredSize(ViewUtil.width(WIDTH));
     }
 
-    static DigitView create() {
-        return new DigitView();
+    static DigitPanel create() {
+        return new DigitPanel();
     }
 
     @Override
@@ -28,36 +30,36 @@ class DigitView extends JPanel {
         g.drawImage(img, 0, 0, null);
     }
 
-    void setDigit(int digit) {
+    void setDigit(Digit digit) {
         switch (digit) {
-            case 0:
+            case ZERO:
                 setImage("0.png");
                 return;
-            case 1:
+            case ONE:
                 setImage("1.png");
                 return;
-            case 2:
+            case TWO:
                 setImage("2.png");
                 return;
-            case 3:
+            case THREE:
                 setImage("3.png");
                 return;
-            case 4:
+            case FOUR:
                 setImage("4.png");
                 return;
-            case 5:
+            case FIVE:
                 setImage("5.png");
                 return;
-            case 6:
+            case SIX:
                 setImage("6.png");
                 return;
-            case 7:
+            case SEVEN:
                 setImage("7.png");
                 return;
-            case 8:
+            case EIGHT:
                 setImage("8.png");
                 return;
-            case 9:
+            case NINE:
                 setImage("9.png");
                 return;
             default:
