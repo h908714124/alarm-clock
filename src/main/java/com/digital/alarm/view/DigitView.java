@@ -2,6 +2,7 @@ package com.digital.alarm.view;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -13,6 +14,7 @@ class DigitView extends JPanel {
     private BufferedImage img;
 
     private DigitView() {
+        setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
         setPreferredSize(ViewUtil.width(WIDTH));
     }
 

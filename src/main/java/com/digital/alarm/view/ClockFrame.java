@@ -31,7 +31,7 @@ public class ClockFrame extends JFrame implements ClockView {
     private PlusButtonListener plusListener;
 
     private ClockFrame() throws HeadlessException {
-        FlowLayout layout = new FlowLayout();
+        FlowLayout layout = new FlowLayout(FlowLayout.CENTER, 0, 0);
         setLayout(layout);
         setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         setSize(ViewUtil.width(1024));
