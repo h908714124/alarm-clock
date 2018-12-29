@@ -1,26 +1,16 @@
 package com.digital.alarm.view;
 
-import com.digital.alarm.model.Digit;
-
 import javax.swing.JFrame;
 
 public interface ClockView {
 
-    Digit getHourLeft();
+    void setHourLeft(int hourLeft);
 
-    void setHourLeft(Digit hourLeft);
+    void setHourRight(int hourRight);
 
-    Digit getHourRight();
+    void setMinuteLeft(int minuteLeft);
 
-    void setHourRight(Digit hourRight);
-
-    Digit getMinuteLeft();
-
-    void setMinuteLeft(Digit minuteLeft);
-
-    Digit getMinuteRight();
-
-    void setMinuteRight(Digit minuteRight);
+    void setMinuteRight(int minuteRight);
 
     JFrame asFrame();
 

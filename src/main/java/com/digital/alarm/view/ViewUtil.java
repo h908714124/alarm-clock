@@ -4,7 +4,7 @@ import java.awt.Dimension;
 
 class ViewUtil {
 
-    private static final int HEIGHT = 180;
+    private static final int HEIGHT = 244;
 
     static Dimension width(int width) {
         return new Dimension(width, HEIGHT);
