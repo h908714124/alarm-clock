@@ -16,23 +16,23 @@ public class Time {
     }
 
     public Digit getHourLeft() {
-        return Digit.values()[Math.floorMod(hours / 10, 10)];
+        int d = Math.floorMod(hours / 10, 10);
+        return Digit.values()[d];
     }
 
     public Digit getHourRight() {
-        return Digit.values()[Math.floorMod(hours, 10)];
+        int d = Math.floorMod(hours, 10);
+        return Digit.values()[d];
     }
 
     public Digit getMinuteLeft() {
-        return Digit.values()[Math.floorMod(minutes / 10, 10)];
+        int d = Math.floorMod(minutes / 10, 10);
+        return Digit.values()[d];
     }
 
     public Digit getMinuteRight() {
-        return Digit.values()[Math.floorMod(minutes, 10)];
-    }
-
-    public int getMinutes() {
-        return minutes;
+        int d = Math.floorMod(minutes, 10);
+        return Digit.values()[d];
     }
 
     public void incrementMinute() {

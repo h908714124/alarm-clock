@@ -8,8 +8,13 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 class DigitPanel extends JPanel {
+
+    private static final Map<String, BufferedImage> IMG_CACHE
+            = new HashMap<>(10);
 
     private static final int WIDTH = 180;
 
@@ -68,10 +73,15 @@ class DigitPanel extends JPanel {
     }
 
     private void setImage(String resource) {
-        try {
-            this.img = ImageIO.read(getClass().getResource(resource));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        BufferedImage cached = IMG_CACHE.get(resource);
+        if (cached == null) {
+            try {
+                cached = ImageIO.read(getClass().getResource(resource));
+                IMG_CACHE.put(resource, cached);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
+        this.img = cached;
     }
 }

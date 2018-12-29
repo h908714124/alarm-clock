@@ -4,6 +4,7 @@ import com.digital.alarm.model.Time;
 import com.digital.alarm.presenter.AlarmClockPresenter;
 import com.digital.alarm.view.ClockFrame;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.KeyStroke;
