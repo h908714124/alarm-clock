@@ -37,17 +37,31 @@ public class Time {
 
     public void incrementMinute() {
         minutes++;
+        if (minutes > 59) {
+            minutes = 0;
+            incrementHour();
+        }
     }
 
     public void decrementMinute() {
         minutes--;
+        if (minutes < 0) {
+            minutes = 59;
+            decrementHour();
+        }
     }
 
     public void incrementHour() {
         hours++;
+        if (hours > 23) {
+            hours = 0;
+        }
     }
 
     public void decrementHour() {
         hours--;
+        if (hours < 0) {
+            hours = 23;
+        }
     }
 }
