@@ -4,7 +4,6 @@ import com.digital.alarm.model.Time;
 import com.digital.alarm.presenter.AlarmClockPresenter;
 import com.digital.alarm.view.ClockFrame;
 
-import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.KeyStroke;
@@ -15,7 +14,8 @@ public class AlarmClock {
 
     public static void main(String[] args) {
 
-        AlarmClockPresenter presenter = create(getTime(args));
+        Time time = getTime(args);
+        AlarmClockPresenter presenter = createPresenter(time);
         SwingUtilities.invokeLater(() -> {
             JFrame frame = presenter.getFrame();
             frame.getRootPane().getRootPane().registerKeyboardAction(e -> frame.dispose(),
@@ -35,7 +35,7 @@ public class AlarmClock {
         return Time.of(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
     }
 
-    private static AlarmClockPresenter create(Time time) {
+    private static AlarmClockPresenter createPresenter(Time time) {
         ClockFrame view = ClockFrame.create();
         AlarmClockPresenter presenter = new AlarmClockPresenter(view, time);
         view.setHoursListener(presenter);
